@@ -1,0 +1,44 @@
+{
+  "Invoice": {
+    "ID": "F001-0000003",
+    "IssueDate": "2024-03-07",
+    "InvoiceTypeCode": "01",
+    "AccountingSupplierParty": {
+      "Party": {
+        "Name": "Distribuidora XYZ",
+        "CompanyID": "900123456-7"
+      }
+    },
+    "AccountingCustomerParty": {
+      "Party": {
+        "Name": "Ana Torres",
+        "CompanyID": "765432189"
+      }
+    },
+    "LegalMonetaryTotal": {
+      "PayableAmount": 2740000
+    },
+    "InvoiceLine": [
+      {
+        "ID": "1",
+        "Item": {
+          "Name": "Laptop"
+        },
+        "Price": {
+          "PriceAmount": 2500000
+        },
+        "InvoicedQuantity": 1
+      },
+      {
+        "ID": "2",
+        "Item": {
+          "Name": "Mouse"
+        },
+        "Price": {
+          "PriceAmount": 120000
+        },
+        "InvoicedQuantity": 2
+      }
+    ]
+  }
+}

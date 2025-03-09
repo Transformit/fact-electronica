@@ -1,0 +1,10 @@
+2025-03-08 17:04:36,511 - INFO - XML generado correctamente.
+2025-03-08 17:04:37,425 - INFO - XML firmado correctamente.
+2025-03-08 17:04:37,425 - INFO - Intentando enviar factura firmada a la DIAN...
+2025-03-08 17:04:38,655 - ERROR - Error en la respuesta de la DIAN: 415 - 
+2025-03-08 17:04:38,655 - ERROR - No se obtuvo respuesta válida de la DIAN.
+2025-03-08 17:36:26,529 - INFO - XML generado correctamente.
+2025-03-08 17:36:26,659 - INFO - XML firmado correctamente.
+2025-03-08 17:36:26,659 - INFO - Intentando enviar factura firmada a la DIAN...
+2025-03-08 17:36:27,683 - ERROR - Error en la respuesta de la DIAN: 415 - 
+2025-03-08 17:36:27,683 - ERROR - No se obtuvo respuesta válida de la DIAN.

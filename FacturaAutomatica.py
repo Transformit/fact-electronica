@@ -2,138 +2,150 @@ import os
 import subprocess
 import requests
 import logging
-import xml.etree.ElementTree as ET
 import json
+import base64
+from fpdf import FPDF
+import xml.etree.ElementTree as ET
+
+#  Variables para el certificado
+CERT_FILE = "certificate.pem"   # Reemplázarlo cuando tengamos el oficial
+KEY_FILE = "privateKey.pem"     # Reemplázarlo cuando tengamos el oficial
+
+#  Variable para activar/desactivar el envío a la DIAN
+ENVIAR_A_DIAN = False  # 🔹 Cambiar a True cuando tengamos credenciales oficiales
+
+#  URL de la DIAN
+URL_DIAN = "https://vpfe-hab.dian.gov.co/WcfDianCustomerServices.svc"
+
+#  Token y credenciales (Reemplazar cuando estén disponibles)
+TOKEN = "TU_TOKEN_AQUI"
+USUARIO_DIAN = "USUARIO_DIANAQUI"
+CONTRASEÑA_DIAN = "CONTRASEÑA_DIANAQUI"
 
 def configurar_logs():
     logging.basicConfig(filename="facturacion.log", level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-def generar_xml_desde_json(json_data, xml_output):
+def ejecutar_index_js():
+    """Ejecuta index.js para generar factura.json y factura.xml."""
     try:
-        factura = ET.Element("Invoice")
-        ET.SubElement(factura, "ID").text = json_data["Invoice"]["ID"]
-        ET.SubElement(factura, "IssueDate").text = json_data["Invoice"]["IssueDate"]
-        ET.SubElement(factura, "InvoiceTypeCode").text = json_data["Invoice"]["InvoiceTypeCode"]
-        
-        supplier = ET.SubElement(factura, "AccountingSupplierParty")
-        party_supplier = ET.SubElement(supplier, "Party")
-        ET.SubElement(party_supplier, "Name").text = json_data["Invoice"]["AccountingSupplierParty"]["Party"]["Name"]
-        ET.SubElement(party_supplier, "CompanyID").text = json_data["Invoice"]["AccountingSupplierParty"]["Party"]["CompanyID"]
-        
-        customer = ET.SubElement(factura, "AccountingCustomerParty")
-        party_customer = ET.SubElement(customer, "Party")
-        ET.SubElement(party_customer, "Name").text = json_data["Invoice"]["AccountingCustomerParty"]["Party"]["Name"]
-        ET.SubElement(party_customer, "CompanyID").text = json_data["Invoice"]["AccountingCustomerParty"]["Party"]["CompanyID"]
-        
-        total = ET.SubElement(factura, "LegalMonetaryTotal")
-        ET.SubElement(total, "PayableAmount").text = str(json_data["Invoice"]["LegalMonetaryTotal"]["PayableAmount"])
-        
-        invoice_lines = ET.SubElement(factura, "InvoiceLine")
-        for item in json_data["Invoice"]["InvoiceLine"]:
-            line = ET.SubElement(invoice_lines, "Line")
-            ET.SubElement(line, "ID").text = item["ID"]
-            item_element = ET.SubElement(line, "Item")
-            ET.SubElement(item_element, "Name").text = item["Item"]["Name"]
-            price = ET.SubElement(line, "Price")
-            ET.SubElement(price, "PriceAmount").text = str(item["Price"]["PriceAmount"])
-            ET.SubElement(line, "InvoicedQuantity").text = str(item["InvoicedQuantity"])
-        
-        tree = ET.ElementTree(factura)
-        tree.write(xml_output)
-        logging.info("XML generado correctamente.")
-        return True
+        resultado = subprocess.run(["node", "index.js"], capture_output=True, text=True)
+        if resultado.returncode == 0:
+            logging.info(" index.js ejecutado correctamente.")
+        else:
+            logging.error(f" Error ejecutando index.js: {resultado.stderr}")
     except Exception as e:
-        logging.error(f"Error al generar XML: {str(e)}")
-        return False
+        logging.error(f" Excepción al ejecutar index.js: {str(e)}")
 
-def firmar_xml(xml_file, cert_file, key_file, output_file):
+def firmar_xml(xml_file, signature_file):
     try:
         comando = [
             "openssl", "smime", "-sign",
             "-in", xml_file,
-            "-out", output_file,
-            "-signer", cert_file,
-            "-inkey", key_file,
-            "-outform", "PEM",  # Cambiar a "PEM"
-            "-nodetach"
+            "-out", signature_file,
+            "-signer", CERT_FILE,
+            "-inkey", KEY_FILE,
+            "-outform", "DER",
+            "-nodetach",
+            "-binary"
         ]
         
-        resultado = subprocess.run(comando, capture_output=True, text=True)
+        resultado = subprocess.run(comando, capture_output=True)
         if resultado.returncode == 0:
-            logging.info("XML firmado correctamente.")
+            logging.info(" Firma generada correctamente en formato DER.")
             return True
         else:
-            logging.error(f"Error al firmar el XML: {resultado.stderr}")
+            logging.error(f" Error al generar la firma: {resultado.stderr}")
             return False
     except Exception as e:
-        logging.error(f"Excepción al firmar XML: {str(e)}")
+        logging.error(f" Excepción al firmar XML: {str(e)}")
         return False
 
 def enviar_a_dian(xml_firmado):
-    url_dian = "https://vpfe-hab.dian.gov.co/WcfDianCustomerServices.svc"  # Endpoint de pruebas
-    headers = {"Content-Type": "application/xml"}
+    headers = {
+        "Content-Type": "application/soap+xml; charset=utf-8",
+        "SOAPAction": "http://wcf.dian.colombia/IWcfDianCustomerServices/SendBillSync",
+        "Authorization": f"Bearer {TOKEN}"
+    }
     
+    with open(xml_firmado, "r", encoding="utf-8") as f:
+        xml_content = f.read()
+    
+    soap_request = f"""<?xml version="1.0" encoding="UTF-8"?>
+    <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wcf="http://wcf.dian.colombia">
+        <soapenv:Header>
+            <wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+                <wsse:UsernameToken>
+                    <wsse:Username>{USUARIO_DIAN}</wsse:Username>
+                    <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">{CONTRASEÑA_DIAN}</wsse:Password>
+                </wsse:UsernameToken>
+            </wsse:Security>
+        </soapenv:Header>
+        <soapenv:Body>
+            <wcf:SendBillSync>
+                <wcf:fileName>factura_firmada.xml</wcf:fileName>
+                <wcf:contentFile><![CDATA[{xml_content}]]></wcf:contentFile>
+            </wcf:SendBillSync>
+        </soapenv:Body>
+    </soapenv:Envelope>"""
+
     try:
-        with open(xml_firmado, "rb") as file:
-            response = requests.post(url_dian, data=file, headers=headers)
-            
+        response = requests.post(URL_DIAN, data=soap_request, headers=headers)
+        logging.info(f" Respuesta DIAN: {response.status_code} - {response.text}")
+
         if response.status_code == 200:
-            logging.info("Factura enviada correctamente a la DIAN.")
+            root = ET.fromstring(response.text)
+            ns = {"ns": "http://wcf.dian.colombia"}
+            cufe = root.find(".//ns:Cufe", ns)
+
+            if cufe is not None:
+                cufe_text = cufe.text
+                logging.info(f"✅ CUFE recibido: {cufe_text}")
+                generar_pdf(cufe_text)
+            else:
+                logging.warning("⚠ No se encontró CUFE en la respuesta de la DIAN.")
+
             return response.text
         else:
-            logging.error(f"Error en la respuesta de la DIAN: {response.status_code} - {response.text}")
+            logging.error(f" Error en la respuesta de la DIAN: {response.status_code} - {response.text}")
             return None
     except Exception as e:
-        logging.error(f"Excepción al enviar a la DIAN: {str(e)}")
+        logging.error(f" Excepción al enviar a la DIAN: {str(e)}")
         return None
+
+def generar_pdf(cufe="CUFE_DE_PRUEBA"):
+    pdf = FPDF()
+    pdf.set_auto_page_break(auto=True, margin=15)
+    pdf.add_page()
+    pdf.set_font("Arial", "B", 16)
+    pdf.cell(200, 10, "Factura Electrónica", ln=True, align='C')
+    pdf.ln(10)
+    pdf.set_font("Arial", size=12)
+    pdf.cell(200, 10, f"CUFE: {cufe}", ln=True, align='C')
+    pdf.output("factura.pdf")
+    logging.info(" PDF generado con éxito: factura.pdf")
 
 def main():
     configurar_logs()
-    
-    json_factura = {
-        "Invoice": {
-            "ID": "1001",
-            "IssueDate": "2025-03-08",
-            "InvoiceTypeCode": "01",
-            "AccountingSupplierParty": {
-                "Party": {
-                    "Name": "Distribuidora XYZ",
-                    "CompanyID": "900123456-7"
-                }
-            },
-            "AccountingCustomerParty": {
-                "Party": {
-                    "Name": "Cliente ABC",
-                    "CompanyID": "123456789-0"
-                }
-            },
-            "LegalMonetaryTotal": {
-                "PayableAmount": 50000
-            },
-            "InvoiceLine": [
-                {"ID": "1", "Item": {"Name": "Producto A"}, "Price": {"PriceAmount": 25000}, "InvoicedQuantity": 2}
-            ]
-        }
-    }
+    ejecutar_index_js()
     
     xml_file = "factura.xml"
-    cert_file = "certificate.pem"
-    key_file = "privateKey.pem"
-    output_file = "factura_firmada.xml"
+    signature_file = "firma.p7s"
     
-    if generar_xml_desde_json(json_factura, xml_file):
-        if firmar_xml(xml_file, cert_file, key_file, output_file):
-            logging.info("Intentando enviar factura firmada a la DIAN...")
-            respuesta_dian = enviar_a_dian(output_file)
-            
-            if respuesta_dian:
-                logging.info("Respuesta de la DIAN: " + respuesta_dian)
-            else:
-                logging.error("No se obtuvo respuesta válida de la DIAN.")
+    if not os.path.exists(xml_file):
+        logging.error(" No se generó factura.xml, proceso detenido.")
+        return
+    
+    if firmar_xml(xml_file, signature_file):
+        logging.info(" Firma generada correctamente. Insertándola en el XML...")
+        
+        if ENVIAR_A_DIAN:
+            logging.info(" Envío a la DIAN activado.")
+            enviar_a_dian("factura_firmada.xml")
         else:
-            logging.error("No se pudo firmar el XML, proceso detenido.")
+            logging.info(" Modo pruebas: No se envió a la DIAN.")
+            generar_pdf()
     else:
-        logging.error("No se pudo generar el XML, proceso detenido.")
+        logging.error(" No se pudo firmar el XML, proceso detenido.")
 
 if __name__ == "__main__":
     main()

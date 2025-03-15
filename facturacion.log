@@ -8,3 +8,180 @@
 2025-03-08 17:36:26,659 - INFO - Intentando enviar factura firmada a la DIAN...
 2025-03-08 17:36:27,683 - ERROR - Error en la respuesta de la DIAN: 415 - 
 2025-03-08 17:36:27,683 - ERROR - No se obtuvo respuesta válida de la DIAN.
+2025-03-09 10:51:25,779 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 10:51:25,887 - INFO - \u2705 XML firmado correctamente.
+2025-03-09 10:51:25,887 - INFO - Intentando enviar factura firmada a la DIAN...
+2025-03-09 10:51:27,795 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 10:51:27,795 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 11:15:40,001 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 11:15:40,046 - INFO - \u2705 XML firmado correctamente en formato PKCS7 (.p7m).
+2025-03-09 11:15:40,046 - INFO - Intentando enviar factura firmada a la DIAN...
+2025-03-09 11:15:40,491 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 11:15:40,492 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 11:35:39,446 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 11:35:39,501 - INFO - \u2705 XML firmado correctamente en formato DER (binario).
+2025-03-09 11:35:39,501 - INFO - Intentando enviar factura firmada a la DIAN...
+2025-03-09 11:35:39,963 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 11:35:39,964 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 11:36:01,373 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 11:36:01,426 - INFO - \u2705 XML firmado correctamente en formato DER (binario).
+2025-03-09 11:36:01,426 - INFO - Intentando enviar factura firmada a la DIAN...
+2025-03-09 11:36:01,899 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 11:36:01,900 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 11:46:06,090 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 11:46:06,144 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 11:46:06,145 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 11:46:06,146 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 11:46:06,564 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 11:46:06,564 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 11:53:45,134 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 11:53:45,189 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 11:53:45,189 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 11:53:45,190 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 11:53:45,628 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 11:53:45,629 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 12:02:18,557 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 12:02:18,604 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 12:02:18,604 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 12:02:18,620 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 12:02:19,026 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 12:02:19,026 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 12:04:58,725 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 12:04:58,778 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 12:04:58,779 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 12:04:58,780 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 12:04:59,288 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 12:04:59,289 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 15:33:39,124 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 15:33:39,174 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 15:33:39,174 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 15:33:39,174 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 15:33:39,698 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 15:33:39,700 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 15:40:39,905 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 15:40:39,963 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 15:40:39,963 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 15:40:39,963 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 15:40:40,463 - ERROR - \u274c Error en la respuesta de la DIAN: 500 - <s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://www.w3.org/2005/08/addressing"><s:Header><a:Action s:mustUnderstand="1">http://www.w3.org/2005/08/addressing/soap/fault</a:Action></s:Header><s:Body><s:Fault><s:Code><s:Value>s:Sender</s:Value><s:Subcode><s:Value xmlns:a="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">a:InvalidSecurity</s:Value></s:Subcode></s:Code><s:Reason><s:Text xml:lang="en-US">An error occurred when verifying security for the message.</s:Text></s:Reason></s:Fault></s:Body></s:Envelope>
+2025-03-09 15:40:40,463 - ERROR - \u274c No se obtuvo respuesta válida de la DIAN.
+2025-03-09 16:32:40,819 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 16:32:40,888 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 16:32:40,888 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 16:32:40,890 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 16:32:40,890 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 16:42:18,571 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 16:42:18,633 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 16:42:18,633 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 16:42:18,633 - INFO - \u2705 Firma insertada correctamente en factura_firmada.xml.
+2025-03-09 16:42:18,633 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 16:49:07,152 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 16:49:07,152 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 16:49:07,152 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:02:33,054 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:02:33,120 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:02:33,120 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:02:33,120 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:02:33,120 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:33:24,584 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:33:24,647 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:33:24,647 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:33:24,647 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:37:46,464 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:37:46,531 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:37:46,532 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:37:46,532 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:40:17,281 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:40:17,331 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:40:17,331 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:40:17,331 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:42:39,522 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:42:39,572 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:42:39,572 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:42:39,572 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:44:16,060 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:44:16,111 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:44:16,111 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:44:16,111 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:51:23,766 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:51:23,860 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:51:23,860 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:51:23,860 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:51:23,860 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:54:06,907 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:54:06,967 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:54:06,967 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:54:06,967 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:54:06,968 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:54:58,220 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:54:58,267 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:54:58,267 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:54:58,267 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:54:58,267 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:55:20,700 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:55:20,765 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:55:20,766 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:55:20,766 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:55:20,766 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:56:35,742 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:56:35,807 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:56:35,807 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:56:35,807 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 17:56:35,809 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 17:57:17,567 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 17:57:17,617 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 17:57:17,617 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 17:57:17,617 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 17:57:18,041 - INFO - \U0001f4cc Respuesta DIAN: 415 - 
+2025-03-09 17:57:18,041 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 18:08:04,680 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 18:08:04,743 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 18:08:04,743 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 18:08:04,743 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-09 18:08:04,743 - INFO - \u2705 PDF generado con éxito: factura.pdf
+2025-03-09 18:08:55,590 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 18:08:55,641 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 18:08:55,641 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 18:08:55,641 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 18:08:56,090 - INFO - \U0001f4cc Respuesta DIAN: 415 - 
+2025-03-09 18:08:56,090 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 18:19:25,997 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 18:19:26,047 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 18:19:26,047 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 18:19:26,047 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 18:19:26,512 - INFO - \U0001f4cc Respuesta DIAN: 400 - 
+2025-03-09 18:19:26,512 - ERROR - \u274c Error en la respuesta de la DIAN: 400 - 
+2025-03-09 18:26:10,165 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 18:26:10,214 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 18:26:10,214 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 18:26:10,229 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 18:26:10,712 - INFO - \U0001f4cc Respuesta DIAN: 400 - 
+2025-03-09 18:26:10,712 - ERROR - \u274c Error en la respuesta de la DIAN: 400 - 
+2025-03-09 18:26:19,887 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 18:26:19,955 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 18:26:19,956 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 18:26:19,956 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 18:26:20,369 - INFO - \U0001f4cc Respuesta DIAN: 400 - 
+2025-03-09 18:26:20,369 - ERROR - \u274c Error en la respuesta de la DIAN: 400 - 
+2025-03-09 18:30:40,528 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 18:30:40,594 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 18:30:40,594 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 18:30:40,594 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 18:30:41,078 - INFO - \U0001f4cc Respuesta DIAN: 415 - 
+2025-03-09 18:30:41,078 - ERROR - \u274c Error en la respuesta de la DIAN: 415 - 
+2025-03-09 20:54:01,952 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-09 20:54:02,045 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-09 20:54:02,045 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-09 20:54:02,045 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-09 20:54:04,411 - INFO - \U0001f4cc Respuesta DIAN: 400 - 
+2025-03-09 20:54:04,411 - ERROR - \u274c Error en la respuesta de la DIAN: 400 - 
+2025-03-10 14:04:56,491 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-10 14:04:56,552 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-10 14:04:56,552 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-10 14:04:56,552 - INFO - \U0001f4cc Envío a la DIAN activado.
+2025-03-10 14:04:57,006 - INFO - \U0001f4cc Respuesta DIAN: 400 - 
+2025-03-10 14:04:57,006 - ERROR - \u274c Error en la respuesta de la DIAN: 400 - 
+2025-03-10 14:06:55,582 - INFO - \u2705 index.js ejecutado correctamente.
+2025-03-10 14:06:55,636 - INFO - \u2705 Firma generada correctamente en formato DER.
+2025-03-10 14:06:55,636 - INFO - \u2705 Firma generada correctamente. Insertándola en el XML...
+2025-03-10 14:06:55,637 - INFO - \U0001f4cc Modo pruebas: No se envió a la DIAN.
+2025-03-10 14:06:55,640 - INFO - \u2705 PDF generado con éxito: factura.pdf

@@ -1,1 +1,41 @@
-<Invoice><ID>1001</ID><IssueDate>2025-03-08</IssueDate><InvoiceTypeCode>01</InvoiceTypeCode><AccountingSupplierParty><Party><Name>Distribuidora XYZ</Name><CompanyID>900123456-7</CompanyID></Party></AccountingSupplierParty><AccountingCustomerParty><Party><Name>Cliente ABC</Name><CompanyID>123456789-0</CompanyID></Party></AccountingCustomerParty><LegalMonetaryTotal><PayableAmount>50000</PayableAmount></LegalMonetaryTotal><InvoiceLine><Line><ID>1</ID><Item><Name>Producto A</Name></Item><Price><PriceAmount>25000</PriceAmount></Price><InvoicedQuantity>2</InvoicedQuantity></Line></InvoiceLine></Invoice>
+<?xml version="1.0"?>
+<Invoice>
+  <ID>F001-0000003</ID>
+  <IssueDate>2024-03-07</IssueDate>
+  <InvoiceTypeCode>01</InvoiceTypeCode>
+  <AccountingSupplierParty>
+    <Party>
+      <Name>Distribuidora XYZ</Name>
+      <CompanyID>900123456-7</CompanyID>
+    </Party>
+  </AccountingSupplierParty>
+  <AccountingCustomerParty>
+    <Party>
+      <Name>Ana Torres</Name>
+      <CompanyID>765432189</CompanyID>
+    </Party>
+  </AccountingCustomerParty>
+  <LegalMonetaryTotal>
+    <PayableAmount>2740000</PayableAmount>
+  </LegalMonetaryTotal>
+  <InvoiceLine>
+    <ID>1</ID>
+    <Item>
+      <Name>Laptop</Name>
+    </Item>
+    <Price>
+      <PriceAmount>2500000</PriceAmount>
+    </Price>
+    <InvoicedQuantity>1</InvoicedQuantity>
+  </InvoiceLine>
+  <InvoiceLine>
+    <ID>2</ID>
+    <Item>
+      <Name>Mouse</Name>
+    </Item>
+    <Price>
+      <PriceAmount>120000</PriceAmount>
+    </Price>
+    <InvoicedQuantity>2</InvoicedQuantity>
+  </InvoiceLine>
+</Invoice>

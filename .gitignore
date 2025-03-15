@@ -1,0 +1,8 @@
+node_modules
+*.pem
+*.log
+*.xml
+*.json
+!datos.json
+*.pdf
+package-lock.json

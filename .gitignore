@@ -4,6 +4,7 @@ node_modules
 *.xml
 *.json
 *.p7s
-!datos.json
 *.pdf
+!datos.json
+!package.json
 package-lock.json

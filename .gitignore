@@ -3,6 +3,7 @@ node_modules
 *.log
 *.xml
 *.json
+*.p7s
 !datos.json
 *.pdf
 package-lock.json
